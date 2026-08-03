@@ -1,10 +1,11 @@
 import React from "react";
 
  import { Cookie, Refrigerator, Sparkles } from "lucide-react";
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import UserDropdown from "./UserDropdown";
 
 
 
@@ -43,7 +44,7 @@ export default async function Header() {
           
 
           <SignedIn>
-           <UserButton/> 
+           <UserDropdown/> 
       </SignedIn>
 
           <SignedOut>
