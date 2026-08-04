@@ -70,6 +70,40 @@
       "type": "string",
       "required": true,
       "unique": true
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "subscriptionTier": {
+      "type": "enumeration",
+      "enum": [
+        "free",
+        "pro"
+      ]
+    },
+    "recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recipe.recipe",
+      "mappedBy": "author"
+    },
+    "pantry_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pantry-item.pantry-item",
+      "mappedBy": "owner"
+    },
+    "saved_recipes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::saved-recipe.saved-recipe",
+      "mappedBy": "user"
     }
   }
 }
