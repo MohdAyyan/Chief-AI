@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ClerkProvider } from '@clerk/nextjs'
 import { neobrutalism } from "@clerk/themes";
 import Header from "@/components/Header";
+import { Toaster } from "@/components/ui/sonner";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
       <main className="min-h-screen">
         {children}
         </main>
+        <Toaster/>
         <footer className="py-8 px-4 border-t">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-center items-center gap-6">
               <div className="flex items-center gap-3">
