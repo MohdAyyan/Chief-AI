@@ -18,7 +18,7 @@ import {
   Trash2,
   X,
 } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PricingModal from "@/components/PricingModel";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -345,4 +345,4 @@ function PantryPage() {
   );
 }
 
-export default Pantry;
+export default PantryPage;

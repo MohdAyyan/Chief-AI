@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     serverComponentsHmrCache: false, // defaults to true
   },
+  serverExternalPackages: ["@arcjet/next", "@arcjet/node", "@arcjet/analyze-wasm"],
   images: {
     remotePatterns: [
       {

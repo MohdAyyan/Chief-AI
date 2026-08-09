@@ -18,6 +18,7 @@ import {
 import { Button } from "./ui/button";
 import { toast } from "sonner";
 import { Badge } from "./ui/badge";
+import ImageUploader from "./ImageUploader";
 
 function AddToPantryModal({ isOpen, onClose, onSuccess }) {
   const [activeTab, setActiveTab] = useState("scan");
