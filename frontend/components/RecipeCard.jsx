@@ -19,7 +19,12 @@ function RecipeCard({
         showImage: true,
       };
     }
+
+    
 }
+
+
+
 
     const data = getRecipeData();
 

@@ -18,7 +18,7 @@ export async function scanPantryImage(formData){
         if (!user) {
             throw new Error("User not found");
         }
-        const isPro = user.subscription === "pro";
+        const isPro = user.subscriptionTier === "pro";
         const arjectClient = isPro ? proTierLimit : freePantryScans;
 
         const req = await request()
@@ -50,7 +50,7 @@ export async function scanPantryImage(formData){
     const buffer = Buffer.from(bytes);
     const base64Image = buffer.toString("base64");
      // Call Gemini Vision API
-    const model = genAI.getGenerativeModel({ model: "gemini-robotics-er-2-preview" });
+    const model = genAI.getGenerativeModel({ model: "gemini-3.6-flash" });
 
      const prompt = `
 You are a professional chef and ingredient recognition expert. Analyze this image of a pantry/fridge and identify all visible food ingredients.
