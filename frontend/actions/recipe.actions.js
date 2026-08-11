@@ -86,7 +86,9 @@ export async function getOrGenerateRecipe(formData) {
     console.log("🔍 Searching for recipe:", normalizedTitle);
 
     const isPro = user.subscriptionTier === "pro";
+
     // Step 1: Check if recipe already exists in DB (case-insensitive search)
+    
     const searchResponse = await fetch(
       `${STRAPI_URL}/api/recipes?filters[title][$eqi]=${encodeURIComponent(
         normalizedTitle
