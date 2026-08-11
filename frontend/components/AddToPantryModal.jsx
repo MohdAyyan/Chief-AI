@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from "./ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
-import { Camera, Check, Loader2, Plus } from "lucide-react";
+import { Camera, Check, Loader2, Plus, X } from "lucide-react";
 import useFetch from "@/hooks/use-fetch";
 import {
   addPantryItemManually,

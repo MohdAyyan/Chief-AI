@@ -6,6 +6,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import PricingSection from "./PricingSection";
 
 function PricingModel({ subscriptionTier = "free", children }) {
   const [isOpen, setIsOpen] = useState(false);
