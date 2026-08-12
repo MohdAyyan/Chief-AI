@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import useFetch from '@/hooks/use-fetch';
 import { AlertCircle, ArrowLeft, Badge, ChefHat, Loader2, Package, Sparkles, TrendingUp } from 'lucide-react';
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import PricingModel from '@/components/PricingModel';
 import RecipeCard from '@/components/RecipeCard';
 
@@ -36,7 +36,7 @@ function PantryRecipesPage() {
             href="/pantry"
             className="inline-flex items-center gap-2 text-stone-600 hover:text-orange-600 transition-colors mb-4 font-medium"
           >
-            <ArrowLeftt className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" />
             Back to Pantry
           </Link>
         <div className="flex items-center gap-3 mb-6">

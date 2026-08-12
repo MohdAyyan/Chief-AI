@@ -24,7 +24,9 @@ function PricingModel({ subscriptionTier = "free", children }) {
         <DialogTitle />
         <div>
           <PricingSection
-            
+            subscriptionTier={subscriptionTier}
+            isModal={true}
+            onClose={() => setIsOpen(false)}    
           />
         </div>
       </DialogContent>

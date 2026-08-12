@@ -295,6 +295,7 @@ Guidelines:
       "📤 Saving new recipe to database with title:",
       normalizedTitle
     );
+    
      const createRecipeResponse = await fetch(`${STRAPI_URL}/api/recipes`, {
       method: "POST",
       headers: {

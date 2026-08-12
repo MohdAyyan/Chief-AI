@@ -9,6 +9,7 @@ import UserDropdown from "./UserDropdown";
 import { checkUser } from "@/lib/checkUser";
 import PricingModel from "./PricingModel";
 import { Badge } from "./ui/badge";
+import HowToCookModal from "./HowToCookModal";
 
 
 
@@ -47,6 +48,7 @@ export default async function Header() {
           
 
           <SignedIn>
+            <HowToCookModal/>
             {
               user && <PricingModel subscriptionTier={user.subscriptionTier}>
                 <Badge  variant="outline"

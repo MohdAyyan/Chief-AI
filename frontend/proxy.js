@@ -1,5 +1,6 @@
 import { auth, clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
+import { aj } from './lib/arcjet';
 
 
 const isProtectedRoute = createRouteMatcher([
@@ -10,7 +11,14 @@ const isProtectedRoute = createRouteMatcher([
 ]);
 
 export default clerkMiddleware(async(auth, req)=>{
-    const { userId, redirectToSignIn } = await auth()
+
+  const decision = await aj.protect(req)
+
+  if(decision.isDenied()) {
+    return NextResponse.json({error:"Request Denied"})
+  }
+
+  const { userId, redirectToSignIn } = await auth()
     if (!userId && isProtectedRoute(req)) {
         const { redirectToSignIn } = await auth();
         return redirectToSignIn();

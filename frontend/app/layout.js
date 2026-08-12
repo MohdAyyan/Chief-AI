@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ClerkProvider } from '@clerk/nextjs'
 import { neobrutalism } from "@clerk/themes";
 import Header from "@/components/Header";
+import TopProgressBar from "@/components/TopProgressBar";
 import { Toaster } from "@/components/ui/sonner";
 
 
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
     >
       <body className={`${inter.className}`}>
+        <TopProgressBar />
         <Header/>
       <main className="min-h-screen">
         {children}

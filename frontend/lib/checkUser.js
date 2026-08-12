@@ -21,7 +21,7 @@ export const checkUser = async () => {
 
   try {
     const existingUSerResponse = await fetch(
-      `${STRAPI_URL}/api/users?filters[clerkId][$eq=${user.id}]`,
+      `${STRAPI_URL}/api/users?filters[clerkId][$eq]=${user.id}`,
       {
         headers: {
           Authorization: `Bearer ${STRAPI_API_TOKEN}`,
@@ -30,7 +30,7 @@ export const checkUser = async () => {
       },
     );
 
-    if (existingUSerResponse.ok) {
+    if (!existingUSerResponse.ok) {
       const errorText = await existingUSerResponse.text();
       console.error("Strapi error response: ", errorText);
       return null;
